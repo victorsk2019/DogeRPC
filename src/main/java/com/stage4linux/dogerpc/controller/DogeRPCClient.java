@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("/api/v1/dogerpc")
-@CrossOrigin(origins = "${server.originaddr}:${server.originport}")
+@CrossOrigin(origins = "${server.originaddr}")
 public class DogeRPCClient {
     private final DogeRPCConnect rpcService;
     public DogeRPCClient(DogeRPCConnect connect) {
