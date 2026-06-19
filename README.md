@@ -32,5 +32,25 @@ and launched as a standalone JAR from anywhere using:
 
 `java -jar DogeRPC-<current version>.jar` command.
 
+For production use that uses SSL certificate, one approach is to define environment
+variables before launching DogeRPC JAR.  The Spring Boot will scan and inject environment variables'
+value into the program. Here's one possible approach:
+
+```
+export SERVER_PORT=8443
+export SERVER_SSL_ENABLED=true
+export SERVER_SSL_KEY_STORE="/<directory>/<secret keystore>.jks"
+export SERVER_SSL_KEY_STORE_PASSWORD="<securepassword>"
+export SERVER_SSL_KEY_STORE_TYPE="JKS"
+export SERVER_SSL_KEY_ALIAS="<keystore alias>"
+export RCP_USER="<rpc_user>"
+export RPC_PASSWORD="<rpc_password>"
+```
+And run `java -jar DogeRPC-0.0.1.jar`
+
+The client-facing application consuming Spring Boot service would have to refer to
+the service by: `https://<mydomain>:8443`
+
 ## TODO
 Add testing module.
+
