@@ -8,10 +8,10 @@ import com.rpclib.util.RPCProperties;
 @Service
 public class DogeRPCConnect {
 
-    @Value("${rpc.user}")
+    @Value("${RPC_USER}")
     private String rpcuser;
 
-    @Value("${rpc.password}")
+    @Value("${RPC_PASSWORD}")
     private String rpcpassword;
 
     @Value("${rpc.ip}")
